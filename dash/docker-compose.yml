@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  transcription-app:
+  transcribe_dash:
     build: .
     ports:
       - "8050:8050"
