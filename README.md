@@ -28,6 +28,7 @@ Lightweight python application(s) to extract speech from video files and produce
   ```
 
 
+The application(s) can be run locally, but Docker is recommended.
 See `requirements.txt` and `dash/requirements.txt` for Python dependencies.
 
 ## Layout
