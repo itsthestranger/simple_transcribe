@@ -7,19 +7,10 @@ Lightweight python application(s) to extract speech from video files and produce
 - CLI (local):
 
   ```bash
-  python3 transcribe.py <video-file> > transcript.txt
+  python3 transcribe.py <video_file> [output_file] [model_size] [device]
   ```
 
-- Dash UI (Docker):
- - Dash UI (Docker):
-
-  ```bash
-  cd dash
-  docker-compose build
-  docker-compose up -d
-  ```
-
-## Recommended run (Docker)
+### recommended run (Docker)
 
 Build the image:
 
@@ -33,13 +24,20 @@ Run (mount `videos/` and enable GPUs):
 sudo docker run --gpus all -v /path/to/repo/videos:/data whisper-transcribe /data/<input>.mp4 /data/output.txt
 ```
 
-See `run.md` for exact example commands.
+
+- Dash UI (Docker):
+
+  ```bash
+  cd dash
+  docker-compose build
+  docker-compose up -d
+  ```
+
 
 See `requirements.txt` and `dash/requirements.txt` for Python dependencies.
 
 ## Layout
 
 - `transcribe.py` — CLI for transcribing videos
-- `dash/` — Dash UI, Dockerfile, and `docker-compose.yml`
-- `videos/` — sample inputs and outputs
+- `dash/` — Dash UI (`transcribe_dash.py`), Dockerfile, and `docker-compose.yml`
 
