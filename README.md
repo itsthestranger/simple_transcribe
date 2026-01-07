@@ -4,28 +4,22 @@ Lightweight python application(s) to extract speech from video files and produce
 
 ## Quick start
 
-- CLI (local):
+### CLI:
 
+  Build the image:
+  
   ```bash
-  python3 transcribe.py <video_file> [output_file] [model_size] [device]
+  sudo docker build -t transcribe .
+  ```
+  
+  Run (mount `<videos>/` and enable GPUs):
+  
+  ```bash
+  sudo docker run --gpus all -v /path/to/<videos>:/data transcribe /data/<input>.mp4 /data/<output>.txt
   ```
 
-### recommended run (Docker)
 
-Build the image:
-
-```bash
-sudo docker build -t whisper-transcribe .
-```
-
-Run (mount `videos/` and enable GPUs):
-
-```bash
-sudo docker run --gpus all -v /path/to/repo/videos:/data whisper-transcribe /data/<input>.mp4 /data/output.txt
-```
-
-
-- Dash UI (Docker):
+### Dash UI:
 
   ```bash
   cd dash
