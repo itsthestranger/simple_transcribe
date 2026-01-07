@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  transcription-app:
+    build: .
+    ports:
+      - "8050:8050"
+    environment:
+      - PYTHONUNBUFFERED=1
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    restart: unless-stopped
+    volumes:
+      - ./data:/data  # Optional: for accessing local files

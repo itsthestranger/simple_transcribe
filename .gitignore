@@ -1,3 +1,6 @@
 /videos
 run.md
 requirements.txt
+/dash/data
+/dash/requirements.txt
+/dash/run.md
